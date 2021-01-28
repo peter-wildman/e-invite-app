@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <style type="text/css">
+      html, body {
+        margin: 0;
+        height: 100%;
+        background-color: hsl(350,100%,88%);
+      }
+      #c {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+        background-color: hsl(350,100%,88%);
+        background-image: url("./images/title-large.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      #center{
+        display: block;
+        width: 100%;
+        height:100%;
+        position:absolute;
+      }
+
+      #plane{
+        position: absolute;
+        top: 10px;
+        left: 30px;
+        z-index: 1000;
+      }
+  </style>
+  <script type="module" src="threecode.js"></script>
+  <script src='./threex.vertexanimation.js'></script>
+  <script src='./three.js'></script>
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+</body>
+</html>

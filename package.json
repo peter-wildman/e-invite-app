@@ -1,0 +1,14 @@
+{
+  "name": "einvite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "threecode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.124.0"
+  }
+}
