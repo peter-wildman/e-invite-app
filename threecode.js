@@ -21,6 +21,7 @@ function main() {
   const canvas = document.querySelector('#c');
   //set canvas to bellow the window
   canvas.style.top = window.innerHeight;
+  canvas.style.display = 'block';
   canvas.style.backgroundColor = 'hsl(350,100%,88%)';
 
   const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias: true});
