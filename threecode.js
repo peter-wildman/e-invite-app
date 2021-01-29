@@ -1,6 +1,6 @@
-import * as THREE from '/node_modules/three/build/three.module.js';
-import {OrbitControls} from '/node_modules/three/examples/jsm/controls/OrbitControls.js';
-import {GLTFLoader} from '/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from './node_modules/three/build/three.module.js';
+import {OrbitControls} from './node_modules/three/examples/jsm/controls/OrbitControls.js';
+import {GLTFLoader} from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';
 
 function main() {
   //for wobble
