@@ -169,7 +169,7 @@ function main() {
     if (resizeRendererToDisplaySize(renderer)) {
       const canvas = renderer.domElement;
       const aspectProportion = canvas.clientWidth / canvas.clientHeight;
-      if(aspectProportion > 1.58 || canvas.clientWidth >800){
+      if(aspectProportion > 1.08){
         camera.aspect = aspectProportion;
       } else {
         camera.aspect = 1.3;
