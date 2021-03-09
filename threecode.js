@@ -192,8 +192,8 @@ function main() {
     //fade belt in
     if(fadeInFlag){
       //bellow 0.7 opacity the belt is just white
-      if(material.opacity < 0.7){
-        material.opacity = 0.7;
+      if(material.opacity < 0.8){
+        material.opacity = 0.8;
       } else if(material.opacity < 1.0) {
         material.opacity += 0.03;
       } else {
