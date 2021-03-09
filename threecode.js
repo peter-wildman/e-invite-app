@@ -91,7 +91,7 @@ function main() {
         } );
 
 
-         material.opacity = 0;
+         material.opacity = 0.0;
       	 mesh	= new THREE.Mesh( geometry, material );
 
          scene.add( mesh );
