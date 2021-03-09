@@ -92,6 +92,7 @@ function main() {
 
 
          material.opacity = 0.0;
+         material.transparent = true;
       	 mesh	= new THREE.Mesh( geometry, material );
 
          scene.add( mesh );
@@ -193,9 +194,7 @@ function main() {
     //fade belt in
     if(fadeInFlag){
       //bellow 0.7 opacity the belt is just white
-      if(material.opacity < 0.7){
-        material.opacity = 0.7;
-      } else if(material.opacity < 1.0) {
+      if(material.opacity < 1.0) {
         material.opacity += 0.03;
       } else {
         if(!breakApart){
