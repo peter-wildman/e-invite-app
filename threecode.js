@@ -10,13 +10,15 @@ function main() {
   var yWobbleDist = 0.8;
   var xWobbleDist = 0.31;
   let extremeWobbleTrigger = false;
-  let beltTransfromTime = 10000;
+  let beltTransfromTime = 5000;
   let spinTrigger = false;
   let spinTriggerTime = 4000;
   let counter = 0;
   var mesh;
   let beltSpinCounter = 0;
   let beltSpeed = 0.00001;
+
+  let paused = false;
 
 
   const canvas = document.querySelector('#c');
@@ -102,17 +104,19 @@ function main() {
         //////////////////////////////////////////////////////////////////////////////////
         // instanciate the animation object
         var animation	= new THREEx.VertexAnimation(geometry, function(origin, position, delta, now){
+        if(!paused){
           // here you put your formula, something clever which fit your needs
       		var speed	= 2 + Math.cos(0.2 * now*Math.PI*2)*2;
       		//var angle	= speed*now*Math.PI*2 + origin.y*10;
       		var angle	= 5*now*Math.PI*2 + origin.y*15;
           counter++;
-
           if(!breakApart){
             position.x	= origin.x + Math.cos(angle*0.1)*xWobbleDist;
         		position.y	= origin.y + Math.sin(angle*yWobbleSpeed)* yWobbleDist;
         		position.z	= origin.z + Math.sin(angle*0.1)*0.53;
           } else {
+            //set points to outside screen-ish
+            //this is the break apart
             if(counter % 5 == 0){
               position.x = -200;
           		position.y= -200;
@@ -126,7 +130,10 @@ function main() {
               position.x= 200;
           		position.y= -200;
             }
+
           }
+        }
+
         })
         // update the animation at every frame
         updateFcts.push(function(delta, now){
@@ -198,7 +205,6 @@ function main() {
         material.opacity += 0.03;
       } else {
         if(!breakApart){
-
         //increase wobble till breakApart
         if(extremeWobbleTrigger == false){
           setTimeout(() => {
@@ -219,23 +225,26 @@ function main() {
 
         if(spinTrigger){
           beltSpinCounter += beltSpeed;
-          //beltSpinCounter = beltSpinCounter + Math.sin(beltSpinCounter)*10;
-          console.log(Math.sin(beltSpinCounter));
-           // camera.position.x = (Math.sin(beltSpinCounter)*10);
-           // camera.position.z = (Math.cos(beltSpinCounter)*10)+400;
-           //mesh.rotation.y = (Math.sin(beltSpinCounter)*10);
-           mesh.rotation.y = beltSpinCounter;
-           // mesh.rotation.z = beltSpinCounter-0.08;
-           beltSpeed+=0.002;
+          mesh.rotation.y = beltSpinCounter;
+          beltSpeed+=0.009;
         }
       } //!breakApart
 
         //wait 2 secs then animate vertexes
         //to break apart into colour
         setTimeout(() => {
-          breakApart = true;
+          if(!breakApart) breakApart = true;
+          //pause movement and bring in text
+          setTimeout(() => {
+            if(!paused){
+              document.getElementById("wrapper").style.zIndex = "1000";
+              document.getElementById("wrapper").style.opacity = "1.0";
+              paused = true;
+            }
+          }, 1000);
         },beltTransfromTime+1000);
       }
+
     }
     //adding this range to the hue
     //keeps the colour change more restrained
@@ -253,9 +262,6 @@ function main() {
 
     renderer.render(scene, camera);
     requestAnimationFrame(render);
-    // console.log("camera x: " + camera.position.x);
-    // console.log("camera y: " + camera.position.y);
-    // console.log("camera z: " + camera.position.z);
   }
 
     requestAnimationFrame(render);
