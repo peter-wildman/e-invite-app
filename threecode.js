@@ -16,7 +16,8 @@ function main() {
   let counter = 0;
   var mesh;
   let beltSpinCounter = 0;
-  let beltSpeed = 0.0001;
+  let beltSpeed = 0.00001;
+
 
   const canvas = document.querySelector('#c');
   //set canvas to bellow the window
@@ -61,6 +62,7 @@ function main() {
     camera.position.copy(direction.multiplyScalar(distance).add(boxCenter));
     camera.position.y += 160;
     camera.position.x -= 90;
+
 
     // pick some near and far values for the frustum that
     // will contain the box.
@@ -151,6 +153,7 @@ function main() {
 
 
   function resizeRendererToDisplaySize(renderer) {
+
     const canvas = renderer.domElement;
     const width = canvas.clientWidth;
     const height = canvas.clientHeight;
@@ -165,7 +168,13 @@ function main() {
   function render() {
     if (resizeRendererToDisplaySize(renderer)) {
       const canvas = renderer.domElement;
-      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      const aspectProportion = canvas.clientWidth / canvas.clientHeight;
+      if(aspectProportion > 1.58 || canvas.clientWidth >800){
+        camera.aspect = aspectProportion;
+      } else {
+        camera.aspect = 1.3;
+      }
+
       camera.updateProjectionMatrix();
     }
     //animate canvas to top of screen
@@ -217,7 +226,7 @@ function main() {
            //mesh.rotation.y = (Math.sin(beltSpinCounter)*10);
            mesh.rotation.y = beltSpinCounter;
            // mesh.rotation.z = beltSpinCounter-0.08;
-           beltSpeed+=0.0008;
+           beltSpeed+=0.002;
         }
       } //!breakApart
 
