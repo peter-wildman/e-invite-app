@@ -183,6 +183,7 @@ function main() {
     if( canvasTopInt > 0) {
       canvasTopInt -= canvasTopInt * 0.04;
       canvas.style.top = Math.floor(canvasTopInt);
+      material.opacity = 0;
     } else {
       //wait half a second before bringing belt in
       setTimeout(() => {
@@ -192,8 +193,8 @@ function main() {
     //fade belt in
     if(fadeInFlag){
       //bellow 0.7 opacity the belt is just white
-      if(material.opacity < 0.8){
-        material.opacity = 0.8;
+      if(material.opacity < 0.7){
+        material.opacity = 0.7;
       } else if(material.opacity < 1.0) {
         material.opacity += 0.03;
       } else {
