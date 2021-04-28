@@ -177,7 +177,6 @@ function main() {
 
 
   function resizeRendererToDisplaySize(renderer) {
-
     const canvas = renderer.domElement;
     const width = canvas.clientWidth;
     const height = canvas.clientHeight;
