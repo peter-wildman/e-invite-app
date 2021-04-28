@@ -46,6 +46,22 @@ function main() {
 
   let fadeInFlag = false;
 
+  let bgImg = loadImage("./images/title-large.png");
+  document.getElementById('c').style.background = 'url('+bgImg+')';
+
+  async function loadImage(imageUrl) {
+    let img;
+    const imageLoadPromise = new Promise(resolve => {
+        img = new Image();
+        img.onload = resolve;
+        img.src = imageUrl;
+    });
+
+    await imageLoadPromise;
+    console.log("image loaded");
+    return img;
+}
+
 
 
   function frameArea(sizeToFitOnScreen, boxSize, boxCenter, camera) {
@@ -188,6 +204,8 @@ function main() {
     //animate canvas to top of screen
     var canvasTopInt = parseInt(canvas.style.top);
     //console.log(canvasTopInt);
+    //this is where the title comes up
+
     if( canvasTopInt > 0) {
       canvasTopInt -= canvasTopInt * 0.04;
       canvas.style.top = Math.floor(canvasTopInt);
@@ -198,6 +216,7 @@ function main() {
         fadeInFlag = true;
       }, 500);
     }
+
     //fade belt in
     if(fadeInFlag){
       //bellow 0.7 opacity the belt is just white

@@ -1,10 +1,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
+  <title>Softening the Belt</title>
+  <meta name="description" content="Softening the Belt">
   <meta name="author" content="SitePoint">
   <style type="text/css">
+      @font-face {
+        font-family: Shobhika;
+        src: url(./fonts/Shobhika-Regular.woff);
+      }
+      @font-face {
+        font-family: Shobhika-Bold;
+        src: url(./fonts/Shobhika-Bold.woff);
+      }
       html, body {
         margin: 0;
         height: 100%;
@@ -29,22 +37,78 @@
       }
 
       #wrapper{
-        background-color: rgba(255, 255, 255, 0.7);
-        width: 78%;
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 58%;
         height: 100%;
         position: absolute;
         z-index: -1;
-        margin-left: 11%;
+        margin-left: 21%;
         display:block;
         opacity: 0;
         transition-property: opacity;
         transition-duration: 1s;
         overflow: scroll;
-      }
-      h1{
-        font-size: 10em;
+
       }
 
+      h1{
+        font-family: 'Shobhika-Bold';
+        font-size: 9.5em;
+        line-height: 140px;
+        padding: 0px 30px 0px 60px;
+        margin: 0;
+        color: rgba(36, 70, 89, 0.56);
+        word-spacing: -45px;
+      }
+
+      h2 {
+        font-family: 'Shobhika-Bold';
+        font-size: 2em;
+        padding: 0px 100px 0px 72px;
+        word-spacing: -5px;
+        color: rgba(41, 81, 85, 1);
+        letter-spacing: -0.7px;
+        line-height: 39px;
+      }
+
+
+
+      p, ul {
+        font-family: 'Shobhika';
+        font-size: 2em;
+        padding: 0px 100px 0px 72px;
+        word-spacing: -5px;
+        line-height: 39px;
+        color: rgba(41, 81, 85, 1);
+        letter-spacing: -0.7px;
+      }
+
+      ul {
+        list-style-type: square;
+        margin-left: 33px;
+        line-height: 38px;
+      }
+
+      li{
+        padding-bottom: 12;
+      }
+
+      #top-line-head {
+        padding-top: 40px;
+      }
+
+      #top-line-par {
+        padding-top: 20px;
+        padding-bottom: 0px;
+      }
+
+      .sign-off {
+        margin: 0px;
+      }
+
+      #end-of-page {
+        margin-bottom: 20px;
+      }
   </style>
   <script type="module" src="threecode.js"></script>
   <script src='./threex.vertexanimation.js'></script>
@@ -52,10 +116,30 @@
 </head>
 <body>
   <div id="wrapper">
-    <h1> You are invited to soften the belt </h1>
-    <p> lorem ips lorem ips  lorem ips  lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips </p>
-    <p> lorem ips lorem ips  lorem ips  lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips </p>
-    <p> lorem ips lorem ips  lorem ips  lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips lorem ips </p>
+    <h1 id="top-line-head"> You're </h1>
+    <h1> invited </h1>
+    <h1> to soften </h1>
+    <h1> the belt </h1>
+
+    <p id="top-line-par"> Hi. It’s Pete Wildman here. </p>
+    <p>  You are reading this because I would love to invite you to soften the belt with me. I am inviting you to share your belt with me as an act of trust. I trust you and I would love to sit with you and others and talk about that. </p>
+    <h2> My story of the belt that has lead me here. </h2>
+    <p> A big part of this softening of the belt comes from the belt as an object that holds memories of domestic violence for me. Getting the belt from my father was a moment filled with fear and anger for my younger self. As I have grown and healed from these experiences I have learnt to trust male presenting people in a way that has lead me to want to explore this trust with you. </p>
+    <h2> Stories of your belts. </h2>
+    <p> I am looking forward to exploring the stories of your belts. This act of sharing stories could be an act of softening in itself. I am curious to see all the wonderful things that lead to you getting your belt. Your belt habits. How do you even buy a belt? </p>
+    <h2>An exhibition </h2>
+    <p> I would love to have an exhibition as a way to share some of these stories to the broader community. Showing your belt in different ways would be the idea, embroidering a quote or making a strange kinetic sculptural extravaganza - who knows, I’d love the stories to be the guide.</p>
+    <p> I would be open to all forms of belt giving - photo, lend but no embellishments or transforming your belt into something else.</p>
+    <h2> Gathering together or something on the side </h2>
+    <ul>
+      <li> Goal is a group catch up</li>
+      <li> I'd love to document a conversation</li>
+      <li> Nothing to be published without direct permission from you</li>
+      <li> Can meet in any other way is above does not work</li>
+    </ul>
+    <p> I'd love to hear back from you either way. Let's chat and see if there is something we can do together.</p>
+    <p class="sign-off"> In kindness,</p>
+    <p class="sign-off" id="end-of-page"> Pete </p>
   </div>
   <canvas id="c"></canvas>
 
