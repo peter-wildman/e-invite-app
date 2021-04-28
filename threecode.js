@@ -63,11 +63,11 @@ function main() {
     console.log("image loaded");
     return img;
 }
-document.getElementById('c').style.background = "url('./images/title-large.png')";
-document.getElementById('c').style.backgroundRepeat = 'no-repeat';
-document.getElementById('c').style.backgroundSize = 'contain';
-document.getElementById('c').style.backgroundPosition = 'center';
-//console.log('url('./images/title-large.png')');
+  document.getElementById('c').style.background = "url('./images/title-large.png')";
+  document.getElementById('c').style.backgroundRepeat = 'no-repeat';
+  document.getElementById('c').style.backgroundSize = 'contain';
+  document.getElementById('c').style.backgroundPosition = 'center';
+
 
   function frameArea(sizeToFitOnScreen, boxSize, boxCenter, camera) {
     const halfSizeToFitOnScreen = sizeToFitOnScreen * 0.5;
