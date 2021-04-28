@@ -25,7 +25,7 @@ function main() {
   //set canvas to bellow the window
   canvas.style.top = window.innerHeight;
   canvas.style.backgroundColor = 'hsl(350,100%,88%)';
-  
+
 
   const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias: true});
   const fov = 32;
@@ -48,7 +48,8 @@ function main() {
   let fadeInFlag = false;
 
   let bgImg = loadImage("./images/title-large.png");
-  document.getElementById('c').style.background = 'url('+bgImg+')';
+
+
 
   async function loadImage(imageUrl) {
     let img;
@@ -62,8 +63,11 @@ function main() {
     console.log("image loaded");
     return img;
 }
-
-
+document.getElementById('c').style.background = "url('./images/title-large.png')";
+document.getElementById('c').style.backgroundRepeat = 'no-repeat';
+document.getElementById('c').style.backgroundSize = 'contain';
+document.getElementById('c').style.backgroundPosition = 'center';
+//console.log('url('./images/title-large.png')');
 
   function frameArea(sizeToFitOnScreen, boxSize, boxCenter, camera) {
     const halfSizeToFitOnScreen = sizeToFitOnScreen * 0.5;
@@ -207,6 +211,10 @@ function main() {
     //this is where the title comes up
 
     if( canvasTopInt > 0) {
+      if(document.getElementById('c').style.background==''){
+
+
+      }
       canvasTopInt -= canvasTopInt * 0.04;
       canvas.style.top = Math.floor(canvasTopInt);
       material.opacity = 0;
