@@ -36,6 +36,8 @@
         position:absolute;
       }
 
+
+
       #wrapper{
         background-color: rgba(255, 255, 255, 0.8);
         width: 63%;
@@ -48,7 +50,13 @@
         transition-property: opacity;
         transition-duration: 1s;
         overflow: scroll;
+      }
 
+      @media screen and (max-width:1200px){
+        #wrapper{
+          width: 83%;
+          margin-left: 8%;
+        }
       }
 
       h1{
@@ -144,4 +152,11 @@
   <canvas id="c"></canvas>
 
 </body>
+<script type="text/javascript">
+var para = document.createElement("p");
+var node = document.createTextNode(window.innerWidth);
+para.appendChild(node);
+var element = document.getElementById("wrapper");
+element.appendChild(para);
+</script>
 </html>
