@@ -64,7 +64,7 @@ function main() {
     setTimeout(() => {
       buyTime = true;
       console.log("go");
-    }, 500);
+    }, 800);
 
     return img;
 }
