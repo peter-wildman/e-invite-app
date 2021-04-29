@@ -17,6 +17,7 @@ function main() {
   var mesh;
   let beltSpinCounter = 0;
   let beltSpeed = 0.00001;
+  let buyTime = false;
 
   let paused = false;
 
@@ -61,7 +62,8 @@ function main() {
 
     await imageLoadPromise;
     setTimeout(() => {
-      console.log("image loaded");
+      buyTime = true;
+      console.log("go");
     }, 500);
 
     return img;
@@ -214,11 +216,8 @@ function main() {
     //console.log(canvasTopInt);
     //this is where the title comes up
 
-    if( canvasTopInt > 0) {
-      if(document.getElementById('c').style.background==''){
+    if( canvasTopInt > 0 && buyTime == true) {
 
-
-      }
       canvasTopInt -= canvasTopInt * 0.04;
       canvas.style.top = Math.floor(canvasTopInt);
       material.opacity = 0;
