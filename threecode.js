@@ -60,7 +60,10 @@ function main() {
     });
 
     await imageLoadPromise;
-    console.log("image loaded");
+    setTimeout(() => {
+      console.log("image loaded");
+    }, 500);
+
     return img;
 }
   document.getElementById('c').style.background = "url('./images/title-large.png')";
