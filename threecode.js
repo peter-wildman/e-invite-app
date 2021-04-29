@@ -35,7 +35,6 @@ function main() {
   const far = 100;
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   camera.position.set(0, 10, 20);
-  //console.log(camera.position);
   const controls = new OrbitControls(camera, canvas);
   controls.target.set(0, 5, 0);
   controls.update();
@@ -63,7 +62,6 @@ function main() {
     await imageLoadPromise;
     setTimeout(() => {
       buyTime = true;
-      console.log("go");
     }, 800);
 
     return img;
@@ -242,7 +240,7 @@ function main() {
               spinTrigger = true;
             }, spinTriggerTime);
           //extremeWobbleTrigger = true;
-          //console.log(extremeWobbleTrigger);
+
         setTimeout(() => {
             extremeWobbleTrigger = true;
           }, beltTransfromTime);
