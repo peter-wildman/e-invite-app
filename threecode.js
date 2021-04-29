@@ -216,11 +216,12 @@ function main() {
     //console.log(canvasTopInt);
     //this is where the title comes up
 
-    if( canvasTopInt > 0 && buyTime == true) {
-
-      canvasTopInt -= canvasTopInt * 0.04;
-      canvas.style.top = Math.floor(canvasTopInt);
-      material.opacity = 0;
+    if( canvasTopInt > 0 ) {
+      if(buyTime == true){
+        canvasTopInt -= canvasTopInt * 0.04;
+        canvas.style.top = Math.floor(canvasTopInt);
+        material.opacity = 0;
+      }
     } else {
       //wait half a second before bringing belt in
       setTimeout(() => {
