@@ -206,7 +206,7 @@ function main() {
       } else {
         camera.aspect = 1.3;
       }
-
+//.skjdflkjnsdf
       camera.updateProjectionMatrix();
     }
     //animate canvas to top of screen
