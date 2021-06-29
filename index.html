@@ -58,13 +58,12 @@
 
 
       #wrapper{
-
         width: 63%;
         height: 100%;
         position: absolute;
         z-index: -1;
         margin-left: 18%;
-        display:block;
+        /* display:block; */
         opacity: 0;
         transition-property: opacity;
         transition-duration: 1s;
@@ -199,13 +198,37 @@
       #end-of-page {
         padding-bottom: 80px;
       }
+
+      .closeCSS{
+        opacity: 0.2;
+      }
+
+      #close{
+        float: right;
+        position: relative;
+        top: 7px;
+        right: 7px;
+      }
+
+      #open {
+        float: right;
+        position: relative;
+        top: 7px;
+        right: 7px;
+        z-index:1000;
+        display: none;
+      }
+
   </style>
   <script type="module" src="threecode.js"></script>
   <script src='./threex.vertexanimation.js'></script>
   <script src='./three.js'></script>
+
 </head>
 <body>
+    <img id="open" src="./images/hamburger_icon_open.png" />
   <div id="wrapper">
+    <img id="close" src="./images/hamburger_icon_close.png" />
     <h1 id="top-line-head"> You're </h1>
     <h1> in<span id="extra-kern">v</span>ited </h1>
     <h1> to so<span id="slight-extra-kern">f</span>ten </h1>
@@ -234,5 +257,21 @@
   <canvas id="c"></canvas>
 
 </body>
+<script type="text/javascript">
+document.querySelector('#close').addEventListener('click', () => {
+ document.querySelector('#wrapper').style.opacity = "0.0";
+ setTimeout(() => {
+   document.querySelector('#wrapper').style.display = "none";
+   document.querySelector('#open').style.display = "block";
+ }, 800);
+});
 
+document.querySelector('#open').addEventListener('click', () => {
+ document.querySelector('#wrapper').style.display = "block";
+ setTimeout(() => {
+   document.querySelector('#wrapper').style.opacity = "1.0";
+ }, 100);
+ document.querySelector('#open').style.display = "none";
+});
+</script>
 </html>
